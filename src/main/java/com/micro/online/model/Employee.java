@@ -47,9 +47,4 @@ public class Employee {
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", empPassword=" + empPassword + "]";
 	}
-	
-
-	
-
- 
 }

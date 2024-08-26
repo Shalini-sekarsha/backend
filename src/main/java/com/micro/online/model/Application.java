@@ -2,12 +2,15 @@ package com.micro.online.model;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -33,9 +36,13 @@ public class Application {
     private byte[] aadharImage;
     private String accountType;
     private String status;
+    
+    @ManyToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "user_id")
+	private User user;
 	public Application() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Application(Long id, byte[] userImage, String firstName, String lastName, LocalDate dob, String address,
 			String phoneNumber, String emailId, byte[] aadharImage, String accountType, String status) {

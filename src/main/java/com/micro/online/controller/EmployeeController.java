@@ -17,7 +17,7 @@ import com.micro.online.service.EmployeeService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/emp")
+@RequestMapping("/employee")
 public class EmployeeController {
 
 	@Autowired

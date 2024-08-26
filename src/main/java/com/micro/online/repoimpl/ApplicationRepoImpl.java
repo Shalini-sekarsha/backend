@@ -82,6 +82,13 @@ public class ApplicationRepoImpl implements ApplicationRepo {
 		return true;
 	}
 
+//	@Override
+//	public List<String> userFindApplicationById(int userId) {
+//		Query query=entityMan.createQuery("From Application a Where a.user.userId=:userId");
+//		query.setParameter("userId", userId);
+//		return query.getResultList();
+//	}
+
 	
 	
 

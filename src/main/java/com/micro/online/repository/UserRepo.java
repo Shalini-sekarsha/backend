@@ -2,7 +2,7 @@ package com.micro.online.repository;
 
 import java.util.List;
 
-import com.micro.online.model.Employee;
+
 import com.micro.online.model.User;
 public interface UserRepo {
  

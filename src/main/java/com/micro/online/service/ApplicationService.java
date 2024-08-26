@@ -26,6 +26,8 @@ public interface ApplicationService {
 		Application regApplication(Application application) throws IOException;
 
 		void updateApplication(int applicationId, String status);
+
+//		List<String> findApplicationById(int userId);
 		
 		
 		

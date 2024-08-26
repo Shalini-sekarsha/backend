@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.micro.online.model.Application;
 import com.micro.online.service.ApplicationService;
+import com.micro.online.service.UserService;
 
  
  
@@ -25,6 +26,8 @@ public class ApplicationController {
  
 	@Autowired
 	private ApplicationService applicationService;
+	@Autowired
+	private UserService userService;
 	
 //	@PostMapping("/createApplication")
 //    public Application regApplication(@RequestBody Application application) throws IOException {
@@ -76,7 +79,10 @@ public class ApplicationController {
 	public Application find(@PathVariable("id") int id) {
 		return applicationService.find(id);
 	}
- 
+// @GetMapping("/GetApplicationId/{userId}")
+// public List<String> userfindUserId(@PathVariable("userId")int userId){
+//	 return applicationService.findApplicationById(userId);
+// }
 	@PutMapping("/doApplicationDetailsUpdate")
 	public Application updateApplication(@RequestBody Application application) {
 		return applicationService.updateApplication(application);

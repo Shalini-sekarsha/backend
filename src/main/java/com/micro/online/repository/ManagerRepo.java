@@ -26,5 +26,5 @@ public interface ManagerRepo {
 	public Manager findBymanname(String manname);
 
 
-}
+} 
 

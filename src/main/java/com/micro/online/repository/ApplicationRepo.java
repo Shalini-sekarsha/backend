@@ -17,6 +17,7 @@ public interface ApplicationRepo {
 	public boolean deleteApplications(int id);
 
 	public Application regApplication(Application application);
+//	List<String> userFindApplicationById(int userId);
 
 
 	

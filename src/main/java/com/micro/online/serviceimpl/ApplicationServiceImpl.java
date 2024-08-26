@@ -64,17 +64,19 @@ public class ApplicationServiceImpl implements ApplicationService {
 
 			return;
 		}
-
-		
 		public List<Application> getAllApplication(){
 			return applicationRepo.findAll();
 		}
-
-		@Override
+	@Override
 		public List<Application> getAllApplicationsDetails() {
 			
 			return null;
 		}
+
+//	@Override
+//	public List<String> findApplicationById(int userId) {
+//		return applicationRepo.userFindApplicationById(userId);
+//	}
 
 		
 		
