@@ -22,6 +22,11 @@ public class UserServiceImpl implements UserService {
 		return userdao.insertUser(newUser);
  
 	}
+//	@Override
+//	public User login(String userName, String userPassword) {
+//		User user = userdao.findByuserNameAnduserPassword(userName, userPassword);
+//		return user != null ? user : null;
+//	}
  
 	public User updateUser(User user) {
 		return userdao.updateUser(user);

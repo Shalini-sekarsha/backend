@@ -26,6 +26,10 @@ public class ApplicationServiceImpl implements ApplicationService {
 //		public List<Application> getAllApplicationsDetails() {
 //			return applicationRepo.getApplicationDetails();
 //		}
+	    public List<Application> getApplicationsByUserId(int userId) {
+	        return applicationRepo.findByUserId(userId);
+	    }
+	
  
 		@Override
 		public Application find(int id) {

@@ -1,10 +1,13 @@
 package com.micro.online.model;
 	
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
  
 @Entity
@@ -17,6 +20,8 @@ public class User {
 	private String userName;
 	private String userEmail;
 	private String userPassword;
+//	  @OneToMany(mappedBy = "user")
+//	    private List<Application> applications;
  
 	public User() {
 		super();

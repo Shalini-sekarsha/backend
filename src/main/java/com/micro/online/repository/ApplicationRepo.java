@@ -18,6 +18,7 @@ public interface ApplicationRepo {
 
 	public Application regApplication(Application application);
 //	List<String> userFindApplicationById(int userId);
+	List<Application> findByUserId(int userId);
 
 
 	

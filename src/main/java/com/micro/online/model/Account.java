@@ -1,5 +1,6 @@
 package com.micro.online.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,37 +12,36 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "account")
 public class Account {
+//@OneToOne(cascade = CascadeType.MERGE)
+//@JoinColumn(name = "application_id")
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-    private String firstname;
-    private String lastname;
-    private LocalDate DateofBirth;
-    private String Address;
-    private int Phonenumber;
-    private String Emailid;
-    private String Accounttype;
+    
+    private String firstName;
+    private String lastName;
+    private LocalDate dob;
+    private String address;
+    private String emailId;
+    private String accountType;
+    private int userId;
 	public Account() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Account(Long id, User user, String firstname, String lastname, LocalDate dateofBirth, String address,
-			int phonenumber, String emailid, String accounttype) {
+	public Account(Long id, String firstName, String lastName, LocalDate dob, String address, String emailId,
+			String accountType, int userId) {
 		super();
 		this.id = id;
-		this.user = user;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.DateofBirth = dateofBirth;
-		this.Address = address;
-		this.Phonenumber = phonenumber;
-		this.Emailid = emailid;
-		this.Accounttype = accounttype;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.address = address;
+		this.emailId = emailId;
+		this.accountType = accountType;
+		this.userId = userId;
 	}
 	public Long getId() {
 		return id;
@@ -49,60 +49,51 @@ public class Account {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public User getUser() {
-		return user;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public String getLastname() {
-		return lastname;
+	public LocalDate getDob() {
+		return dob;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	public LocalDate getDateofBirth() {
-		return DateofBirth;
-	}
-	public void setDateofBirth(LocalDate dateofBirth) {
-		DateofBirth = dateofBirth;
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
 	}
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
-	public int getPhonenumber() {
-		return Phonenumber;
+	public String getEmailId() {
+		return emailId;
 	}
-	public void setPhonenumber(int phonenumber) {
-		Phonenumber = phonenumber;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
-	public String getEmailid() {
-		return Emailid;
+	public String getAccountType() {
+		return accountType;
 	}
-	public void setEmailid(String emailid) {
-		Emailid = emailid;
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
 	}
-	public String getAccounttype() {
-		return Accounttype;
+	public int getUserId() {
+		return userId;
 	}
-	public void setAccounttype(String accounttype) {
-		Accounttype = accounttype;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	@Override
-	public String toString() {
-		return "Account [id=" + id + ", user=" + user + ", firstname=" + firstname + ", lastname=" + lastname
-				+ ", DateofBirth=" + DateofBirth + ", Address=" + Address + ", Phonenumber=" + Phonenumber
-				+ ", Emailid=" + Emailid + ", Accounttype=" + Accounttype + "]";
-	}
+	
+	
+	
 	
 
 }

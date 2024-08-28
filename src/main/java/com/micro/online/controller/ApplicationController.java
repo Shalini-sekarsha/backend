@@ -42,7 +42,8 @@ public class ApplicationController {
 			@RequestParam("phoneNumber") String phoneNumber, 
 			@RequestParam("emailId") String emailId,
 			@RequestParam("aadharImage") MultipartFile aadharImage,
-			@RequestParam("accountType") String accountType) 
+			@RequestParam("accountType") String accountType,
+			@RequestParam("userId") int userId)
 	{ 
 		try
 	{ 
@@ -56,7 +57,8 @@ public class ApplicationController {
 		application.setEmailId(emailId); 
 		application.setAadharImage(aadharImage.getBytes());
 		application.setAccountType(accountType); 
-		application.setStatus("pending");
+		application.setUserId(userId);
+		application.setStatus("Pending");
 		applicationService.regApplication(application); 
 		return ResponseEntity.ok("Application submitted successfully!"); 
 		}
@@ -98,6 +100,10 @@ public class ApplicationController {
 			return ResponseEntity.badRequest().body("failed");
 		}
 
+	}
+	@GetMapping("/byUserId/{userId}")
+	public List<Application> getApplicationsByUserId(@PathVariable("userId") int userId) {
+	    return applicationService.getApplicationsByUserId(userId);
 	}
 
 	@DeleteMapping("/deleteApplication/{id}")

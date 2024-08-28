@@ -37,15 +37,19 @@ public class Application {
     private String accountType;
     private String status;
     
-    @ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name = "user_id")
-	private User user;
+//    @ManyToOne(cascade = CascadeType.MERGE)
+//	@JoinColumn(name = "user_id")
+//	private User user;
+    
+    private int userId;
+    
 	public Application() {
 		super();
 		
 	}
+	
 	public Application(Long id, byte[] userImage, String firstName, String lastName, LocalDate dob, String address,
-			String phoneNumber, String emailId, byte[] aadharImage, String accountType, String status) {
+			String phoneNumber, String emailId, byte[] aadharImage, String accountType, String status, int userId) {
 		super();
 		this.id = id;
 		this.userImage = userImage;
@@ -58,7 +62,9 @@ public class Application {
 		this.aadharImage = aadharImage;
 		this.accountType = accountType;
 		this.status = status;
+		this.userId = userId;
 	}
+
 	public Long getId() {
 		return id;
 	}
@@ -125,6 +131,15 @@ public class Application {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
 		return "Application [id=" + id + ", userImage=" + Arrays.toString(userImage) + ", firstName=" + firstName

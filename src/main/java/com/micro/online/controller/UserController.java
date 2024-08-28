@@ -47,7 +47,11 @@ public class UserController {
 		return userservice.insertUser(newUser);
  
 	}
- 
+//	@PostMapping("/login")
+//	public User login(@RequestBody User user) {
+//		return userservice.userLogin(user.getUserName(), user.getUserPassword());
+//	}
+// 
 	@PutMapping("/updateUser")
 
 	public User updateUser(@RequestBody User user) {
@@ -78,19 +82,19 @@ public class UserController {
  
 	@GetMapping("/loginUser/{userName}/{userPassword}")
 
-	public  boolean  loginUser(@PathVariable("userName") String userName,
+	public  User  loginUser(@PathVariable("userName") String userName,
 
 			@PathVariable("userPassword") String userPassword) {
  
 		User existingUser = userservice.findByuserName(userName);
 		try {
 			if (existingUser != null && userPassword.equals(existingUser.getUserPassword())) {
-				return true;
+				return existingUser;
 			} else {
-				return false;
+				return null;
 			}
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
  
 	}

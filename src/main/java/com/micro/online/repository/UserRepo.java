@@ -19,7 +19,8 @@ public interface UserRepo {
 		public List<Integer> getUserIdlist();
  
 		public List<User> searchUser(String userName);
- 
+//		public User findByuserNameAnduserPassword(String userName, String userPassword);
+// 
 		public User userLogin(String userName, String userPassword);
 		public User findByuserName(String userName);
 	}

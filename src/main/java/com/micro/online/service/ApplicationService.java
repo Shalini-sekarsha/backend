@@ -27,6 +27,8 @@ public interface ApplicationService {
 
 		void updateApplication(int applicationId, String status);
 
+		List<Application> getApplicationsByUserId(int userId);
+
 //		List<String> findApplicationById(int userId);
 		
 		

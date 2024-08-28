@@ -10,6 +10,7 @@ import jakarta.persistence.Query;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 
@@ -81,6 +82,15 @@ public class ApplicationRepoImpl implements ApplicationRepo {
 		query.executeUpdate();
 		return true;
 	}
+
+	@Override
+	public List<Application> findByUserId(int userId) {
+
+	    Query query=entityMan.createQuery("SELECT a FROM Application a WHERE a.userId = :userId");
+	  query.setParameter("userId",userId);
+		return query.getResultList();
+	}
+	
 
 //	@Override
 //	public List<String> userFindApplicationById(int userId) {

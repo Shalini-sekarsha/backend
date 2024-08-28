@@ -15,6 +15,7 @@ private int manid;
 private String manname;
 private String manpassword;
 public Manager() {
+	
 	super();
 	// TODO Auto-generated constructor stub
 }

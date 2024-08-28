@@ -27,7 +27,15 @@ public class UserRepoImpl implements UserRepo {
 		entityMan.merge(newUser);
 		return newUser;
 	}
- 
+//	@Override
+//	public User findByuserNameAnduserPassword(String userName, String userPassword) {
+//		String jpql = "SELECT a FROM User a WHERE a.userName = :userName AND a.userPassword = :userPassword";
+//		TypedQuery<User> query = entityMan.createQuery(jpql, User.class);
+//		query.setParameter("userName", userName);
+//		query.setParameter("userPassword", userPassword);
+//		return query.getResultStream().findFirst().orElse(null);
+//	}
+// 
 	@Override
 	public User updateUser(User user) {
 		entityMan.merge(user);
@@ -87,6 +95,7 @@ public class UserRepoImpl implements UserRepo {
 		        return null;
 		    }
 	}
+	
 
 	
 
